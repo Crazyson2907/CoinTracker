@@ -12,7 +12,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import crazyson.com.ua.cointracker.domain.model.CompanyListing
-import kotlinx.coroutines.flow.combine
 
 @Composable
 fun CompanyItem(
@@ -47,7 +46,7 @@ fun CompanyItem(
             }
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "(${company.symbol}",
+                text = "(${company.symbol})",
                 fontStyle = FontStyle.Italic,
                 color = MaterialTheme.colors.onBackground
             )
