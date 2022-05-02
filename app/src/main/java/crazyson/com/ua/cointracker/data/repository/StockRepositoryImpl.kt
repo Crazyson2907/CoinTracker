@@ -1,8 +1,6 @@
 package crazyson.com.ua.cointracker.data.repository
 
-import crazyson.com.ua.cointracker.data.csv.CompanyListingsParser
 import crazyson.com.ua.cointracker.data.csv.CsvParser
-import crazyson.com.ua.cointracker.data.local.CompanyListingEntity
 import crazyson.com.ua.cointracker.data.local.StockDatabase
 import crazyson.com.ua.cointracker.data.mapper.toCompanyInfo
 import crazyson.com.ua.cointracker.data.mapper.toCompanyListing
@@ -26,7 +24,7 @@ class StockRepositoryImpl @Inject constructor(
     private val db: StockDatabase,
     private val companyListingsParser: CsvParser<CompanyListing>,
     private val intradayInfoParser: CsvParser<IntradayInfo>
-): StockRepository {
+) : StockRepository {
 
     private val dao = db.dao
     override suspend fun getCompanyListings(
@@ -42,7 +40,7 @@ class StockRepositoryImpl @Inject constructor(
 
             val isDbEmpty = localListings.isEmpty() && query.isBlank()
             val shouldJustLoadFromCache = !isDbEmpty && !fetchFromRemote
-            if(shouldJustLoadFromCache) {
+            if (shouldJustLoadFromCache) {
                 emit(Resource.Loading(false))
                 return@flow
             }
@@ -82,7 +80,7 @@ class StockRepositoryImpl @Inject constructor(
             val response = api.getIntradayInfo(symbol)
             val results = intradayInfoParser.parse(response.byteStream())
             Resource.Success(results)
-        } catch (e:IOException) {
+        } catch (e: IOException) {
             e.printStackTrace()
             Resource.Error(
                 message = "Couldn't load intraday info"
@@ -99,7 +97,7 @@ class StockRepositoryImpl @Inject constructor(
         return try {
             val result = api.getCompanyInfo(symbol)
             Resource.Success(result.toCompanyInfo())
-        }  catch (e:IOException) {
+        } catch (e: IOException) {
             e.printStackTrace()
             Resource.Error(
                 message = "Couldn't load company info"

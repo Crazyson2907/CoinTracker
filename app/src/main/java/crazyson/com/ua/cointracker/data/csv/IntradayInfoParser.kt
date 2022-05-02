@@ -3,7 +3,6 @@ package crazyson.com.ua.cointracker.data.csv
 import com.opencsv.CSVReader
 import crazyson.com.ua.cointracker.data.mapper.toIntradayInfo
 import crazyson.com.ua.cointracker.data.remote.dto.IntradayInfoDto
-import crazyson.com.ua.cointracker.domain.model.CompanyListing
 import crazyson.com.ua.cointracker.domain.model.IntradayInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
