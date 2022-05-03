@@ -17,6 +17,7 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import crazyson.com.ua.cointracker.presentation.company_info.CompanyInfoScreen
 
 @Composable
 @Destination(start = true)
@@ -63,7 +64,9 @@ fun CompanyListingsScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                // TODO: NAvigate to details
+                                //navigator.navigate(
+                                    //TODO()
+                                //)
                             }
                             .padding(16.dp)
                     )
