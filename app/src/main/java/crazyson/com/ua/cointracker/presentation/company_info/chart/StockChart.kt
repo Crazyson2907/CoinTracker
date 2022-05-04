@@ -53,7 +53,7 @@ fun StockChart(
             }
         }
         val priceStep = (upperValue - lowerValue)/5f
-        (1..5).forEach { i ->
+        (0..4).forEach { i ->
             drawContext.canvas.nativeCanvas.apply {
                 drawText(
                     round(lowerValue + priceStep*i).toString(),
