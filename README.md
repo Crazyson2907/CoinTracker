@@ -1,2 +1,2 @@
 # CoinTracker
-The project of crypto tracking app from youtube
+The project of public companies listings tracking via the API
