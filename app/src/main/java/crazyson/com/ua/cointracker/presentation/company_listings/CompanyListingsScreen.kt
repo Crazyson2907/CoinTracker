@@ -71,10 +71,12 @@ fun CompanyListingsScreen(
                             }
                             .padding(16.dp)
                     )
-                    if(i < state.companies.size) {
-                        Divider(modifier = Modifier.padding(
-                            horizontal = 16.dp
-                        ))
+                    if (i < state.companies.size) {
+                        Divider(
+                            modifier = Modifier.padding(
+                                horizontal = 16.dp
+                            )
+                        )
                     }
                 }
             }

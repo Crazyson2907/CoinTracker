@@ -98,9 +98,9 @@ fun CompanyInfoScreen(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Center
     ) {
-        if(state.isLoading) {
+        if (state.isLoading) {
             CircularProgressIndicator()
-        } else if(state.error != null) {
+        } else if (state.error != null) {
             Text(
                 text = state.error,
                 color = MaterialTheme.colors.error
